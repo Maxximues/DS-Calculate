@@ -10,7 +10,7 @@ class Node:
 class link_list:
 	def __init__(self):
 		# initialize linklist
-		self.head = None 
+		self.head = None
 
 	def insert_head(self, data):
 		newnode = Node(data)

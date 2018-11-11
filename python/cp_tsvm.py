@@ -4,7 +4,7 @@ class tsvm():
 	def __init__(self, L):
 		self.L = L
 
-	
+
 	def length(self):
 		# calculate length
 		self.Aver_L = round(sum(self.L)/len(self.L), 2)
@@ -16,7 +16,7 @@ class tsvm():
 		print(sum(self.X)/56)
 		print("Uncertainty degree: " + str(round(sum(self.X)/56, 3)))
 
-	
+
 	def wavalength(self):
 		# calculate wavalength
 		self.lamta = list()
