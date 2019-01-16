@@ -1,0 +1,96 @@
+set nocompatible		
+set number			
+set guioptions-=r		    
+set guioptions-=L
+set guioptions-=b	
+set showtabline=0	                                
+set nowrap                      
+set fileformat=unix		
+set cindent                     
+set tabstop=4                   
+set shiftwidth=4                
+set showmatch                   
+set scrolloff=5                 
+set laststatus=2                
+set fenc=utf-8                  
+set mouse=a                     
+set selection=exclusive
+set selectmode=mouse,key
+set matchtime=5
+set ignorecase                  
+set incsearch
+set hlsearch                    
+set noexpandtab                 
+set whichwrap+=<,>,h,l
+set autoread
+set cursorline                  
+"set cursorcolumn"                
+set encoding=utf8
+set ambiwidth=double
+
+filetype off 
+set rtp+=~/.vim/bundle/Vundle.vim 
+call vundle#begin() 
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-scripts/indentpython.vim.git'
+Plugin 'vim-scripts/Solarized.git'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jiangmiao/auto-pairs' 
+Plugin 'morhetz/gruvbox'
+Plugin 'mhinz/vim-startify'
+Plugin 'w0rp/ale'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'christoomey/vim-tmux-navigator'
+call vundle#end() 
+filetype plugin indent on
+
+"settings of Gruvbox"
+"set bg=dark"                     
+"colorscheme gruvbox"
+syntax enable
+if has('gui_running')
+    set background=dark
+else
+    set background=light
+endif
+                       
+
+"settings of Nerdtree"
+map <F2> :NERDTreeToggle<CR> 
+let NERDTreeChDirMode=1 "显示书签" 
+let NERDTreeShowBookmarks=1 "设置忽略文件类型" 
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$'] "窗口大小" 
+let NERDTreeWinSize=25
+
+"settings of ale"
+"let g:ale_sign_error = '>>
+"let g:ale_sign_warning = '--'
+"let b:ale_linters = ['pylint']
+
+
+"settings of airline"
+if !exists('g:airline_symbols')   
+  let g:airline_symbols = {}
+endif
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
+set guifont=Hack\ Nerd\ Font\ 13
+"let g:airline_Hack_fonts = 1"
+let g:airline_theme='bubblegum'
+
+"settings of tmux"
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> {Left-Mapping} :TmuxNavigateLeft<cr>
+nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
+nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
+nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
+nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
