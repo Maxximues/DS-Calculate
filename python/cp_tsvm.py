@@ -13,7 +13,7 @@ class tsvm():
 		for i in range(0, 8):
 			self.X.append(round((self.L[i]-self.Aver_L)**2, 5))
 		#print(self.X)
-		print(sum(self.X)/56)
+		#print(sum(self.X)/56)
 		print("Uncertainty degree: " + str(round(sum(self.X)/56, 3)))
 
 
@@ -38,9 +38,8 @@ class tsvm():
 		else:
 			print(sum(self.Y)/56)"""
 		for i in range(0, 8):
-			self.Y.append(round((self.L[i]/8-self.Aver_lamta)**2, 5))
-                print("Uncertainty degree:  " + str(round((sum(self.Y)/56+0.000001)**0.5, 5)))
-
+                    self.Y.append(round((self.L[i]/8-self.Aver_lamta)**2, 5))
+        print("Uncertainty degree:  " + str(round((sum(self.Y)/56+0.000001)**0.5, 5)))
 
 	def wavaspeed(self):
 		# calculate wavaspeed
@@ -55,7 +54,8 @@ class tsvm():
 #L = [72.16, 72.40, 72.36, 72.32, 72.20, 72.40, 72.16, 72.40]
 #L = [72.38, 72.04, 72.00, 72.06, 72.08, 72.12, 72.12, 72.06]
 #L = [74.06, 73.92, 73.80, 74.20, 74.20, 73.88, 73.88, 73.90]
-L = [70.24, 69.70, 69.90, 69.48, 69.4, 69.88, 70.64, 69.5]
+#L = [70.24, 69.70, 69.90, 69.48, 69.4, 69.88, 70.64, 69.5]
+L = [72.78, 73.00, 72.88, 72.90, 72.34, 72.40, 72.88, 72.24]
 A = tsvm(L)
 A.length()
 A.wavalength()
